@@ -27,14 +27,14 @@ class ModelTrainer:
     def __init__(self):
         self.model_trainer_config=ModelTrainerConfig()
 
-    def initiate_model_trainer(self,train_array,test_array,preprocessor_path):
+    def initiate_model_trainer(self,train_array,test_array):
         try:
             logging.info("spitting trainiga  and test input data ")
             x_train,y_train,x_test,y_test =(
-                train_array[:,:-1],
-                train_array[:,-1],
-                test_array[:,:-1],
-                test_array[:,-1]
+                train_array[:, :-1],
+                train_array[:, -1],
+                test_array[:, :-1],
+                test_array[:, -1]
             )
             models= {
                   "Random Forest": RandomForestRegressor(),
